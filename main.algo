@@ -1,0 +1,16 @@
+PROCEDURE tri_insertion(t: ARRAY_OF INTEGER);
+VAR
+    l, aux, j, i: INTEGER;
+BEGIN
+    l := t.length;
+    FOR i FROM 0 TO l - 1 DO
+        aux := t[i];
+        j := i;
+        WHILE (j > 0) AND (t[j - 1] > aux) DO
+            t[j] := t[j - 1];
+            j := j - 1;
+        END_WHILE
+        t[j] := aux;
+    END_FOR
+END
+
